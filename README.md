@@ -8,5 +8,4 @@ This repository will host the front-end application of Team 3's solution.
   * David Alejandro Alcaraz Quiroz
   * Carlos Miguel Pinzón Hernández
   * León Darío Peña Londoño
-  * Johan Alexander Paniagua Bedoya
   * Santiago Echavarría Puerta
