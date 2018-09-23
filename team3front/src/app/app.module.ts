@@ -8,16 +8,19 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import {
   MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
-  MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule
+  MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule, MatDatepickerModule,
+  MatNativeDateModule, MatOptionModule, MatSelectModule, MatFormFieldModule, MatRadioModule
 } from '@angular/material';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { SurveysComponent } from './surveys/surveys.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
-    LoginComponent
+    LoginComponent,
+    SurveysComponent
   ],
   imports: [
     BrowserModule,
@@ -34,8 +37,14 @@ import { AppRoutingModule } from './/app-routing.module';
     MatTableModule,
     MatMenuModule,
     MatProgressSpinnerModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatOptionModule,
+    MatFormFieldModule,
     FormsModule,
-    AppRoutingModule
+    MatRadioModule,
+    AppRoutingModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
