@@ -10,14 +10,19 @@ import {
   MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
   MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule
 } from '@angular/material';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { ListApplicantsComponent } from './list-applicants/list-applicants.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
-    LoginComponent
+    LoginComponent,
+    ListApplicantsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,14 @@ import { AppRoutingModule } from './/app-routing.module';
     MatMenuModule,
     MatProgressSpinnerModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientInMemoryWebApiModule,
+     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
