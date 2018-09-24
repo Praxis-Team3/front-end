@@ -6,6 +6,10 @@ export interface Tutor {
   subject: string;
 }
 
+export interface Option {
+  value: string;
+}
+
 @Component({
   selector: 'app-surveys',
   templateUrl: './surveys.component.html',
@@ -37,6 +41,12 @@ export class SurveysComponent implements OnInit {
     {name: 'David', subject: 'Introduction'},
     {name: 'Felipe', subject: 'Secutiry'},
     {name: 'Leonardo', subject: 'Big Data'}
+  ];
+
+  options: Option[] = [
+    {value:'Excellent'},
+    {value:'Good'},
+    {value:'Deficient'}
   ];
 
 }

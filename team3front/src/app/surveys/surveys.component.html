@@ -31,7 +31,7 @@
           <td>
             <h3>Was your session On-Site or Online?</h3>
             <mat-form-field class="example-full-width">
-              <mat-select [(ngModel)]="survey.sessionType" name="sType" required>
+              <mat-select placeholder="Select" [(ngModel)]="survey.sessionType" name="sType" required>
                 <mat-option value="on-site">On-Site</mat-option>
                 <mat-option value="online">Online</mat-option>
               </mat-select>
@@ -44,9 +44,9 @@
               <h4>Content of the Session</h4>
               <mat-form-field class="example-full-width">
                 <mat-select [(ngModel)]="survey.sessionContent" name="sessionContent" required>
-                  <mat-option value="deficient">Deficient</mat-option>
-                  <mat-option value="good">Good</mat-option>
-                  <mat-option value="excellent">Excellent</mat-option>
+                  <mat-option *ngFor="let option of options" [value]="option.value">
+                    {{option.value}}
+                  </mat-option>
                 </mat-select>
               </mat-form-field>
             </td>
@@ -56,9 +56,9 @@
               <h4>Time of the Session</h4>
               <mat-form-field class="example-full-width">
                 <mat-select [(ngModel)]="survey.sessionTime" name="sessionTime" required>
-                  <mat-option value="deficient">Deficient</mat-option>
-                  <mat-option value="good">Good</mat-option>
-                  <mat-option value="excellent">Excellent</mat-option>
+                    <mat-option *ngFor="let option of options" [value]="option.value">
+                        {{option.value}}
+                      </mat-option>
                 </mat-select>
               </mat-form-field>
             </td>
@@ -68,9 +68,9 @@
               <h4>Resources of the Session</h4>
               <mat-form-field class="example-full-width">
                 <mat-select [(ngModel)]="survey.sessionResources" name="sessionResources" required>
-                  <mat-option value="deficient">Deficient</mat-option>
-                  <mat-option value="good">Good</mat-option>
-                  <mat-option value="excellent">Excellent</mat-option>
+                    <mat-option *ngFor="let option of options" [value]="option.value">
+                        {{option.value}}
+                      </mat-option>
                 </mat-select>
               </mat-form-field>
             </td>
@@ -81,9 +81,9 @@
             <h4>Knowledge of the topic</h4>
             <mat-form-field class="example-full-width">
               <mat-select [(ngModel)]="survey.knowledgeTopic" name="knowledgeOfTopic" required>
-                <mat-option value="deficient">Deficient</mat-option>
-                <mat-option value="good">Good</mat-option>
-                <mat-option value="excellent">Excellent</mat-option>
+                  <mat-option *ngFor="let option of options" [value]="option.value">
+                      {{option.value}}
+                    </mat-option>
               </mat-select>
             </mat-form-field>
           </td>
