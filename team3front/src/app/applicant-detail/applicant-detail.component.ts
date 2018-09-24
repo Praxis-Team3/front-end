@@ -27,4 +27,22 @@ export class ApplicantDetailComponent implements OnInit {
     this.applicantsService.getApplicant(id)
     .subscribe(applicant => this.applicant = applicant);
   }
+
+  rejectApplicant(): void {
+    this.applicant.status = 'rejected';
+    this.applicant.pending = false;
+    this.applicantsService.updateApplicant(this.applicant)
+    .subscribe(() => this.goBack());
+  }
+
+  acceptApplicant(): void {
+    this.applicant.status = 'accepted';
+    this.applicant.pending = false;
+    this.applicantsService.updateApplicant(this.applicant)
+    .subscribe(() => this.goBack());
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
 }

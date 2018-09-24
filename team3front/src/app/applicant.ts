@@ -6,5 +6,6 @@ export class Applicant {
     email: string;
     password: string;
     // need to add video
+    pending: boolean;
     status: string;
 }
