@@ -12,17 +12,20 @@ import {
 } from '@angular/material';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { HttpClientModule } from '@angular/common/http'; 
 
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { ListApplicantsComponent } from './list-applicants/list-applicants.component';
+import { ApplicantDetailComponent } from './applicant-detail/applicant-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
     LoginComponent,
-    ListApplicantsComponent
+    ListApplicantsComponent,
+    ApplicantDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ import { ListApplicantsComponent } from './list-applicants/list-applicants.compo
     MatProgressSpinnerModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
     HttpClientInMemoryWebApiModule,
      // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.

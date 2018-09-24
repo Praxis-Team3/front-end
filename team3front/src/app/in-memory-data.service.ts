@@ -4,8 +4,8 @@ export class InMemoryDataService implements InMemoryDbService {
     createDb() {
         const applicants = [
             {
-                _id: 1,
-                name: 'José',
+                id: 1,
+                name: 'José Francisco',
                 lastname: 'Diaz',
                 birthday: '02/04/1996',
                 email: 'jofdiazdi@unal.edu.co',
@@ -14,7 +14,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 status: 'pending',
             },
             {
-                _id: 2,
+                id: 2,
                 name: 'Carlos Miguel',
                 lastname: 'Pinzon',
                 birthday: '02/04/1996',
@@ -24,7 +24,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 status: 'pending',
             },
             {
-                _id: 3,
+                id: 3,
                 name: 'José',
                 lastname: 'Yepez',
                 birthday: '02/04/1996',

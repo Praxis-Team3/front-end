@@ -1,5 +1,5 @@
 export class Applicant {
-    _id: number;
+    id: number;
     name: string;
     lastname: string;
     birthday: string;
