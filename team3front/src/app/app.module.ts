@@ -6,9 +6,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule, MatListModule} from '@angular/material';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
-  MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule
+  MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule, MatDatepickerModule,
+  MatNativeDateModule, MatOptionModule, MatSelectModule, MatFormFieldModule, MatRadioModule
 } from '@angular/material';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -18,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { ListApplicantsComponent } from './list-applicants/list-applicants.component';
 import { ApplicantDetailComponent } from './applicant-detail/applicant-detail.component';
+import { SurveysComponent } from './surveys/surveys.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +29,14 @@ import { ApplicantDetailComponent } from './applicant-detail/applicant-detail.co
     LoginComponent,
     ListApplicantsComponent,
     ApplicantDetailComponent
+    SurveysComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
     LayoutModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
@@ -42,6 +47,10 @@ import { ApplicantDetailComponent } from './applicant-detail/applicant-detail.co
     MatTableModule,
     MatMenuModule,
     MatProgressSpinnerModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatOptionModule,
+    MatFormFieldModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
@@ -52,6 +61,9 @@ import { ApplicantDetailComponent } from './applicant-detail/applicant-detail.co
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     )
+    MatRadioModule,
+    AppRoutingModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
