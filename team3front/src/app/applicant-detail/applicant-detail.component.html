@@ -1,0 +1,15 @@
+<div class = "applicantInfo" *ngIf = "applicant"> 
+ <mat-card class = "example-card">
+   <mat-card-header>
+     <mat-card-title>{{applicant.name}} {{applicant.lastname}}</mat-card-title>
+     <mat-card-subtitle>{{applicant.email}}</mat-card-subtitle>
+   </mat-card-header>
+   <video width = "640" height="480" controls>
+     <!--añadirVideo-->
+   </video>
+ <mat-card-content>
+    <button mat-raised-button color="accent">Accept</button>
+    <button mat-raised-button color="warn">Reject</button>
+ </mat-card-content>
+ </mat-card>
+</div>

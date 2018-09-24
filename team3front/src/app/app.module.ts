@@ -12,8 +12,14 @@ import {
   MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule, MatDatepickerModule,
   MatNativeDateModule, MatOptionModule, MatSelectModule, MatFormFieldModule, MatRadioModule
 } from '@angular/material';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+import { HttpClientModule } from '@angular/common/http'; 
+
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { ListApplicantsComponent } from './list-applicants/list-applicants.component';
+import { ApplicantDetailComponent } from './applicant-detail/applicant-detail.component';
 import { SurveysComponent } from './surveys/surveys.component';
 
 @NgModule({
@@ -21,6 +27,8 @@ import { SurveysComponent } from './surveys/surveys.component';
     AppComponent,
     MainNavComponent,
     LoginComponent,
+    ListApplicantsComponent,
+    ApplicantDetailComponent
     SurveysComponent
   ],
   imports: [
@@ -44,6 +52,15 @@ import { SurveysComponent } from './surveys/surveys.component';
     MatOptionModule,
     MatFormFieldModule,
     FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule,
+     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
     MatRadioModule,
     AppRoutingModule,
     MatSelectModule
