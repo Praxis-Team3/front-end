@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule, MatListModule} from '@angular/material';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
   MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule, MatDatepickerModule,
@@ -27,6 +28,7 @@ import { SurveysComponent } from './surveys/surveys.component';
     BrowserAnimationsModule,
     MatButtonModule,
     LayoutModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
