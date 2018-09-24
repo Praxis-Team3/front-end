@@ -1,0 +1,114 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Paxis Session Survey</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="surveyForm" myForm="ngForm">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+              <h3>Date of the Session</h3>
+            <mat-form-field class="example-full-width">
+              <input matInput [matDatepicker]="picker" placeholder="Date" [(ngModel)]="survey.sessionDate" name='date' required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h3>Name of the Tutor</h3>
+            <mat-form-field class="example-full-width">
+              <mat-select placeholder="Select" [(ngModel)]="survey.tutorName" name="tutor" required>
+                <mat-option *ngFor="let tutor of tutors" [value]="tutor.name">
+                  {{tutor.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h3>Was your session On-Site or Online?</h3>
+            <mat-form-field class="example-full-width">
+              <mat-select placeholder="Select" [(ngModel)]="survey.sessionType" name="sType" required>
+                <mat-option value="on-site">On-Site</mat-option>
+                <mat-option value="online">Online</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <h2>Overall Quality of the Session</h2>
+        <tr>
+            <td>
+              <h4>Content of the Session</h4>
+              <mat-form-field class="example-full-width">
+                <mat-select [(ngModel)]="survey.sessionContent" name="sessionContent" required>
+                  <mat-option *ngFor="let option of options" [value]="option.value">
+                    {{option.value}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <h4>Time of the Session</h4>
+              <mat-form-field class="example-full-width">
+                <mat-select [(ngModel)]="survey.sessionTime" name="sessionTime" required>
+                    <mat-option *ngFor="let option of options" [value]="option.value">
+                        {{option.value}}
+                      </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <h4>Resources of the Session</h4>
+              <mat-form-field class="example-full-width">
+                <mat-select [(ngModel)]="survey.sessionResources" name="sessionResources" required>
+                    <mat-option *ngFor="let option of options" [value]="option.value">
+                        {{option.value}}
+                      </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+        </tr>
+        <h2>Evaluation of the Tutor</h2>
+        <tr>
+          <td>
+            <h4>Knowledge of the topic</h4>
+            <mat-form-field class="example-full-width">
+              <mat-select [(ngModel)]="survey.knowledgeTopic" name="knowledgeOfTopic" required>
+                  <mat-option *ngFor="let option of options" [value]="option.value">
+                      {{option.value}}
+                    </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h3>At the end of the session you feel?</h3>
+            <mat-form-field class="example-full-width">
+              <mat-select [(ngModel)]="survey.satisfactionLevel" name="levelofSatisfaction" required>
+                <mat-option value="satisfied">Satisfied</mat-option>
+                <mat-option value="unsatisfied">Unsatisfied</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        </table>
+    </form>
+    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="send()" color="accent">Submit</button>
+  </mat-card-actions>
+</mat-card>
+<p>{{sessionType}}</p>
+<p>{{satisfactionLevel}}</p>
+<p>{{sessionDate}}</p>
+<p>{{tutorName}}</p>
