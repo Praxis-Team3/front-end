@@ -90,7 +90,55 @@
         </tr>
         <tr>
           <td>
-            <h3>At the end of the session you feel?</h3>
+            <h4>Ability to Share Knowledge</h4>
+            <mat-form-field class="example-full-width">
+              <mat-select [(ngModel)]="survey.abilityToShare" name="abilityToShare" required>
+                  <mat-option *ngFor="let option of options" [value]="option.value">
+                      {{option.value}}
+                    </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h4>Was the Session Dynamic?</h4>
+            <mat-form-field class="example-full-width">
+              <mat-select [(ngModel)]="survey.dynamic" name="dinamyc" required>
+                  <mat-option *ngFor="let option of options" [value]="option.value">
+                      {{option.value}}
+                    </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h4>Did the Tutor solve all your Questions?</h4>
+            <mat-form-field class="example-full-width">
+              <mat-select [(ngModel)]="survey.solvedQuestions" name="solvedQuestions" required>
+                  <mat-option *ngFor="let option of options" [value]="option.value">
+                      {{option.value}}
+                    </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h4>The Tutor's Language and Tone of Voice were Appropriate?</h4>
+            <mat-form-field class="example-full-width">
+              <mat-select [(ngModel)]="survey.tone" name="tone" required>
+                  <mat-option *ngFor="let option of options" [value]="option.value">
+                      {{option.value}}
+                    </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h2>At the end of the session you feel?</h2>
             <mat-form-field class="example-full-width">
               <mat-select [(ngModel)]="survey.satisfactionLevel" name="levelofSatisfaction" required>
                 <mat-option value="satisfied">Satisfied</mat-option>
@@ -99,7 +147,14 @@
             </mat-form-field>
           </td>
         </tr>
-
+        <tr>
+          <td>
+              <h2>Suggestions or Comments</h2>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Comments" flex [(ngModel)]="survey.suggestions" name="suggestions" required>
+           </mat-form-field>
+        </td>
+        </tr>
         </table>
     </form>
     <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>

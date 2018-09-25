@@ -9,7 +9,7 @@ export class Survey {
         public sessionTime: string,
         public sessionResources: string,
         public knowledgeTopic: string,
-        public abiityToShare: string,
+        public abilityToShare: string,
         public dynamic:string,
         public solvedQuestions: string,
         public tone: string,
