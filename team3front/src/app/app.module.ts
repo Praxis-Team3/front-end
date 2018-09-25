@@ -28,7 +28,7 @@ import { SurveysComponent } from './surveys/surveys.component';
     MainNavComponent,
     LoginComponent,
     ListApplicantsComponent,
-    ApplicantDetailComponent
+    ApplicantDetailComponent,
     SurveysComponent
   ],
   imports: [
@@ -60,7 +60,7 @@ import { SurveysComponent } from './surveys/surveys.component';
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
     MatRadioModule,
     AppRoutingModule,
     MatSelectModule
