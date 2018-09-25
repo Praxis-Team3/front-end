@@ -20,11 +20,6 @@ export class SurveysComponent implements OnInit {
   constructor() { }
   sessionDate: Date;
   survey = new Survey(this.sessionDate,'','','','','','','','','','','','');
-  sessionType: string;
-  tutorName: string;
-  
-  satisfactionLevel: string;
-  knowledgeTopic: string;
 
   ngOnInit() {
   }
