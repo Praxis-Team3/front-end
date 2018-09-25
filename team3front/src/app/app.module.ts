@@ -21,6 +21,8 @@ import { AppRoutingModule } from './/app-routing.module';
 import { ListApplicantsComponent } from './list-applicants/list-applicants.component';
 import { ApplicantDetailComponent } from './applicant-detail/applicant-detail.component';
 import { SurveysComponent } from './surveys/surveys.component';
+import { FinalsurveyComponent } from './finalsurvey/finalsurvey.component';
+import { HelpComponent } from './help/help.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { SurveysComponent } from './surveys/surveys.component';
     LoginComponent,
     ListApplicantsComponent,
     ApplicantDetailComponent,
-    SurveysComponent
+    SurveysComponent,
+    FinalsurveyComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,

@@ -9,3 +9,7 @@ h2 {
 .mat-form-field {
     text-align: left;
   }
+
+.mat-input{
+    width:400px !important;
+  }

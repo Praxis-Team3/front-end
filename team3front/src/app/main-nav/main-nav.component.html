@@ -10,8 +10,9 @@
     <mat-nav-list>
       <a mat-list-item href="#">Apply to Praxis</a>
       <a mat-list-item routerLink="/login">Log In</a>
-      <a mat-list-item routerLink="/survey">Survey</a>
+      <a mat-list-item routerLink="/sessionsurvey">Session Survey</a>
       <a mat-list-item routerLink="/applicants">Applicants</a>
+      <a mat-list-item routerLink="/finalsurvey">Final Survey</a>
       <a mat-list-item href="https://www.psl.com.co/">About PSL</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -30,7 +31,7 @@
       <span class="spacer"></span>
       <button 
       mat-icon-button color ="accent"> 
-      <mat-icon aria-label="Help">help_outline</mat-icon>
+      <mat-icon aria-label="Help" routerLink="/help">help_outline</mat-icon>
       
       </button>
     </mat-toolbar>
