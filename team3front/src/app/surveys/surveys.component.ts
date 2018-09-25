@@ -36,6 +36,11 @@ export class SurveysComponent implements OnInit {
     console.log(this.survey.satisfactionLevel);  
     console.log(this.survey.knowledgeTopic);  
     console.log(this.survey.sessionResources);  
+    console.log(this.survey.abilityToShare); 
+    console.log(this.survey.dynamic);
+    console.log(this.survey.solvedQuestions);
+    console.log(this.survey.tone);
+    console.log(this.survey.suggestions);
   }
   tutors: Tutor[] = [
     {name: 'David', subject: 'Introduction'},
