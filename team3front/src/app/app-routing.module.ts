@@ -6,6 +6,8 @@ import { ApplicantDetailComponent } from './applicant-detail/applicant-detail.co
 import {SurveysComponent} from './surveys/surveys.component';
 import {FinalsurveyComponent} from './finalsurvey/finalsurvey.component';
 import {HelpComponent} from './help/help.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { SuccessComponent } from './success/success.component';
 
 
 const routes: Routes = [
@@ -15,7 +17,9 @@ const routes: Routes = [
   { path: 'detail/:id', component: ApplicantDetailComponent},
   { path: 'sessionsurvey', component: SurveysComponent},
   { path: 'finalsurvey', component: FinalsurveyComponent},
-  { path: 'help', component: HelpComponent}
+  { path: 'help', component: HelpComponent},
+  { path: 'applytopraxis', component: RegistrationComponent},
+  { path: 'success', component: SuccessComponent}
 ];
 
 @NgModule({

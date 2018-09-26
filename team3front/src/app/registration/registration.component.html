@@ -1,0 +1,124 @@
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    
+    <form [formGroup]="firstFormGroup" class="regisForm">
+      <h2>Personal Information</h2>
+      <ng-template matStepLabel>User</ng-template>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="First Name" formControlName="firstCtrl" [(ngModel)]="model.name" required>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Last Name" [(ngModel)]="model.lastname" formControlName="secondCtrl" required>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="BirthDay" type=date [(ngModel)]="model.birthday" formControlName="thirdCtrl" required>
+        </mat-form-field>
+      </div>
+
+      <h2>User Information</h2>
+      <div>
+          <mat-form-field >
+            <input matInput placeholder="Email" type= "email" [(ngModel)]="model.email"  formControlName="fourthCtrl" required email>
+
+          </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput id='password' placeholder="Password" name="password" [(ngModel)]="model.password" type=password formControlName="fifthCtrl" required>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput id='repassword' placeholder="Repeat Password" type=password formControlName="sixthCtrl" required>
+        </mat-form-field>
+      </div>
+    
+
+  
+      
+      <div>
+        <button mat-button matStepperNext onclick="validate_password()">Next</button>
+      </div>
+    </form>
+    
+
+    
+
+
+  </mat-step>
+  <mat-step >
+    <form >
+      <ng-template matStepLabel>Video</ng-template>
+      <div>
+        <h2>Introduction Video</h2>
+      </div>
+      <div>
+        <h3>
+          Tell us what are your expectations about PRAXIS
+          process and introduce yourself
+        </h3>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          
+          <video #video class="video" id= 'video' ></video>
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button md-raised-button color="primary" (click)="startRecording()"> Record </button>
+          <button md-raised-button color="primary"(click) ="stopRecording()"> Stop</button>
+          <button md-raised-button color="primary" (click)="download()"> Download</button>
+        </div>
+      </div>
+      
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext onclick="validate_video()">Next</button>
+      </div>
+    </form>
+    
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Submit</ng-template>
+    <h2>Register Information</h2>
+
+
+    <h3>Personal Information</h3>
+    
+    <div>
+      <h4>Name: {{model.name}}</h4>      
+    </div>
+    <div>
+      <h4>Last Name: {{model.lastname}}</h4>
+    </div>
+    <div>
+      <h4>BirthDay: {{model.birthday}}</h4>
+    </div>
+    <h3>User Information</h3>
+    <div>
+      <h4>Email address: {{model.email}}</h4>
+    </div>
+    <div id='videocontainer'> Video: </div>
+    
+   
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="add(model.name)" [routerLink]="['/success']">
+         Submit</button>
+      
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
