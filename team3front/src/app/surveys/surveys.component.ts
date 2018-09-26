@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Survey } from '../models/survey';
-import { SurveysService } from '../surveys.service';
+import { SurveysService } from './surveys.service';
 
 export interface Tutor {
   name: string;
