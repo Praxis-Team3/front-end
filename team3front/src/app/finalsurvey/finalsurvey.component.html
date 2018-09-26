@@ -1,0 +1,83 @@
+<h2>End of Course Survey</h2>
+<form action="">
+  <div>
+  <h3>How did you feel working with your teammates?</h3>
+  <mat-form-field style="width:1000px !important" >
+    <textarea matInput placeholder="Thoughts" [(ngModel)]="finalsurvey.teamWork" name="teamWork"
+              cdkTextareaAutosize
+              #autosize="cdkTextareaAutosize"
+              cdkAutosizeMinRows="2"
+              cdkAutosizeMaxRows="7" required>
+    </textarea>
+  </mat-form-field>
+</div>
+<div>
+    <h3>What did you think of the role you took up?</h3>
+    <mat-form-field style="width:1000px !important">
+      <textarea matInput placeholder="Thoughts"  [(ngModel)]="finalsurvey.roles" name="roles"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="2"
+                cdkAutosizeMaxRows="7" required>
+      </textarea>
+    </mat-form-field>
+  </div>
+  <div>
+      <h3>What did you think of the tutors you had over the course?</h3>
+      <mat-form-field style="width:1000px !important">
+        <textarea matInput placeholder="Thoughts"  [(ngModel)]="finalsurvey.tutors" name="tutors"
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="2"
+                  cdkAutosizeMaxRows="7" required>
+        </textarea>
+      </mat-form-field>
+  </div>
+  <div>
+      <h3>What did you think of the content of the course?</h3>
+      <mat-form-field style="width:1000px !important">
+        <textarea matInput placeholder="Thoughts"  [(ngModel)]="finalsurvey.content" name="content" 
+                   cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="2"
+                  cdkAutosizeMaxRows="7" required>
+        </textarea>
+      </mat-form-field>
+  </div>
+  <div>
+    <h3>How did you feel interacting with the client?</h3>
+    <mat-form-field style="width:1000px !important">
+        <textarea matInput placeholder="Thoughts"  [(ngModel)]="finalsurvey.client" name="client"
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="2"
+                  cdkAutosizeMaxRows="7" required>
+        </textarea>
+   </mat-form-field>
+  </div>
+  <div>
+      <h3>How did you feel with the communication channels used in the course?</h3>
+      <mat-form-field style="width:1000px !important">
+          <textarea matInput placeholder="Thoughts"  [(ngModel)]="finalsurvey.communication" name="communication"
+                    cdkTextareaAutosize
+                    #autosize="cdkTextareaAutosize"
+                    cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="7" required>
+          </textarea>
+     </mat-form-field>
+    </div>
+    <div>
+        <h3>How did you feel with the overall logistics of the course?</h3>
+        <mat-form-field style="width:1000px !important">
+            <textarea matInput placeholder="Thoughts"  [(ngModel)]="finalsurvey.logistic" name="logistic"
+                      cdkTextareaAutosize
+                      #autosize="cdkTextareaAutosize"
+                      cdkAutosizeMinRows="2"
+                      cdkAutosizeMaxRows="7" required>
+            </textarea>
+       </mat-form-field>
+      </div>
+  <div>
+      <button mat-raised-button (click)="submmit()" color="accent">Submit</button>
+  </div>
+</form>

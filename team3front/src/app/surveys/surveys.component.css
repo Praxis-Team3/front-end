@@ -1,0 +1,15 @@
+h3 {
+    text-align: left;
+}
+
+h2 {
+    text-align: left;
+}
+
+.mat-form-field {
+    text-align: left;
+  }
+
+.mat-input{
+    width:400px !important;
+  }

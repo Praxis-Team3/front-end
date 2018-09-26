@@ -1,0 +1,7 @@
+<h2>Applicants</h2>
+<mat-nav-list class = "applicantlist" role= "list">
+  <a mat-list-item routerLink = "/detail/{{applicant.id}}"
+    role="listitem" *ngFor = "let applicant of applicants">
+      {{applicant.name}} {{applicant.lastname}}
+  </a>
+</mat-nav-list>
