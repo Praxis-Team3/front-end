@@ -19,6 +19,6 @@ export class SurveysService {
   constructor(private http: HttpClient) { }
 
   createSurvey(survey: Survey): Observable<any> {
-    return this.http.post(surveysUrl, survey, httpOptions);
+    return this.http.post(this.surveysUrl, survey, httpOptions);
   }
 }
