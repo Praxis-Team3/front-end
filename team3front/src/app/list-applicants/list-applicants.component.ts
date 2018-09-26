@@ -14,11 +14,11 @@ export class ListApplicantsComponent implements OnInit {
   constructor(private applicantService: ApplicantsService) { }
 
   ngOnInit() {
-    this.getApplicants();
+    this.getPendingApplicants();
   }
 
-  getApplicants(): void {
-    this.applicantService.getApplicants()
+  getPendingApplicants(): void {
+    this.applicantService.searchPendingApplicants()
     .subscribe(applicants => this.applicants = applicants);
   }
 

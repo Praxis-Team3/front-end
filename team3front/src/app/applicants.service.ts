@@ -55,6 +55,13 @@ export class ApplicantsService {
       catchError(this.handleError<any>('updateApplicant'))
     );
   }
+
+  searchPendingApplicants(): Observable<Applicant[]>{
+    return this.http.get<Applicant[]>(`${this.applicantsUrl}/?pending=true`).pipe(
+      tap(_ => this.log(`found pending applicants"`)),
+      catchError(this.handleError<Applicant[]>('searchPendingApplicants', []))
+    );
+  }
   /**
    * Handle Http operation that failed.
    * Let the app continue.

@@ -10,8 +10,8 @@ export class InMemoryDataService implements InMemoryDbService {
                 birthday: '02/04/1996',
                 email: 'jofdiazdi@unal.edu.co',
                 password: '12345',
+                pending : true,
                 // need to add video
-                status: 'pending',
             },
             {
                 id: 2,
@@ -20,8 +20,8 @@ export class InMemoryDataService implements InMemoryDbService {
                 birthday: '02/04/1996',
                 email: 'cmpinzonh@unal.edu.co',
                 password: '12345',
-                // need to add video
-                status: 'pending',
+                pending : true,
+                // need to add vide
             },
             {
                 id: 3,
@@ -30,8 +30,8 @@ export class InMemoryDataService implements InMemoryDbService {
                 birthday: '02/04/1996',
                 email: 'jdyepest@unal.edu.co',
                 password: '12345',
+                pending : true,
                 // need to add video
-                status: 'pending',
             },
         ];
         return {applicants};

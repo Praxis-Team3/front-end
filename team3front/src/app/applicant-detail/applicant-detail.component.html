@@ -8,8 +8,13 @@
      <!--añadirVideo-->
    </video>
  <mat-card-content>
-    <button mat-raised-button color="accent">Accept</button>
-    <button mat-raised-button color="warn">Reject</button>
+    <button mat-raised-button color="accent" (click)="acceptApplicant()">Accept</button>
+    <button mat-raised-button color="warn" (click)="rejectApplicant()">Reject</button>
  </mat-card-content>
  </mat-card>
+ <div>
+   <br>
+    <button mat-raised-button color = "primary" (click)="goBack()">Go Back</button>
+ </div>
+ 
 </div>
