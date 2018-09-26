@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HelpComponent implements OnInit {
 
   constructor() { }
-
+  miguelgh: string = 'https://github.com/cmpinzonh';
   ngOnInit() {
   }
 

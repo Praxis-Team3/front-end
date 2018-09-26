@@ -1,6 +1,7 @@
 <mat-card class="example-card">
   <mat-card-header>
     <h1>Praxis Session Survey</h1>
+    <mat-card-title>Please remember to fill all the fields*</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <form class="surveyForm" myForm="ngForm">
@@ -150,8 +151,15 @@
         <tr>
           <td>
               <h2>Suggestions or Comments</h2>
-            <mat-form-field class="example-full-width">
-              <textarea matInput placeholder="Comments" flex [(ngModel)]="survey.suggestions" name="suggestions" required></textarea>
+            <mat-form-field class="example-full-width" style="width:300px !important">
+              <textarea matInput placeholder="Comments" 
+                        flex [(ngModel)]="survey.suggestions" 
+                        name="suggestions" 
+                        cdkTextareaAutosize
+                        #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="2"
+                        cdkAutosizeMaxRows="7" 
+                        required></textarea>
            </mat-form-field>
         </td>
         </tr>
@@ -163,7 +171,3 @@
     <button mat-raised-button (click)="send()" color="accent">Submit</button>
   </mat-card-actions>
 </mat-card>
-<p>{{sessionType}}</p>
-<p>{{satisfactionLevel}}</p>
-<p>{{sessionDate}}</p>
-<p>{{tutorName}}</p>
