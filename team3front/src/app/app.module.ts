@@ -10,7 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
   MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule, MatDatepickerModule,
-  MatNativeDateModule, MatOptionModule, MatSelectModule, MatFormFieldModule, MatRadioModule
+  MatNativeDateModule, MatOptionModule, MatSelectModule, MatFormFieldModule, MatRadioModule, MatStepperModule
 } from '@angular/material';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -23,6 +23,8 @@ import { ApplicantDetailComponent } from './applicant-detail/applicant-detail.co
 import { SurveysComponent } from './surveys/surveys.component';
 import { FinalsurveyComponent } from './finalsurvey/finalsurvey.component';
 import { HelpComponent } from './help/help.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { HelpComponent } from './help/help.component';
     ApplicantDetailComponent,
     SurveysComponent,
     FinalsurveyComponent,
-    HelpComponent
+    HelpComponent,
+    RegistrationComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +59,7 @@ import { HelpComponent } from './help/help.component';
     MatNativeDateModule,
     MatOptionModule,
     MatFormFieldModule,
+    MatStepperModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,

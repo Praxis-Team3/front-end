@@ -47,6 +47,13 @@ export class ApplicantsService {
     );
   }
 
+  addApplicant(applicant: Applicant): Observable<Applicant> {
+    return this.http.post<Applicant>(this.applicantsUrl, applicant, httpOptions).pipe(
+        tap((student: Applicant) => this.log(`added applicant w/ id=${applicant.id} w/ name=${applicant.name}`)),
+        catchError(this.handleError<Applicant>('addApplicant'))
+    );
+}
+
   //////////////////////// Save methods ////////////////////
 
   updateApplicant (applicant: Applicant): Observable<any> {
