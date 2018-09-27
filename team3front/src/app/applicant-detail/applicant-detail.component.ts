@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApplicantsService } from '../applicants.service';
 import { Location } from '@angular/common';
-import { Applicant } from '../applicant';
+import { Applicant } from '../models/applicant';
 
 
 @Component({
@@ -13,6 +13,35 @@ import { Applicant } from '../applicant';
 export class ApplicantDetailComponent implements OnInit {
 
   public applicant: Applicant;
+  public applicants = [
+    {
+        id: 1,
+        names: 'José Francisco',
+        lastnames: 'Diaz',
+        birthday: '02/04/1996',
+        email: 'jofdiazdi@unal.edu.co',
+        password: '12345',
+        // need to add video
+    },
+    {
+        id: 2,
+        names: 'Carlos Miguel',
+        lastnames: 'Pinzon',
+        birthday: '02/04/1996',
+        email: 'cmpinzonh@unal.edu.co',
+        password: '12345',
+        // need to add vide
+    },
+    {
+        id: 3,
+        names: 'José',
+        lastnames: 'Yepez',
+        birthday: '02/04/1996',
+        email: 'jdyepest@unal.edu.co',
+        password: '12345',
+        // need to add video
+    },
+];
   constructor(
     private route: ActivatedRoute,
     private applicantsService: ApplicantsService,

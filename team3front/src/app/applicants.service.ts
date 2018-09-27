@@ -4,7 +4,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { Observable, of } from 'rxjs';
 
-import { Applicant } from './applicant';
+import { Applicant } from './models/applicant';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
