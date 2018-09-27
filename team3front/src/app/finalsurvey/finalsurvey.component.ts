@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Finalsurvey } from '../models/finalsurvey';
-import { FinalSurveysService } from './final-surveys.service';
+import { FinalSurveysService } from '../services/final-surveys.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-finalsurvey',
@@ -10,8 +11,8 @@ import { FinalSurveysService } from './final-surveys.service';
 export class FinalsurveyComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute,
-    private applicantsService: ApplicantsService,
+    //private route: ActivatedRoute,
+    //private applicantsService: ApplicantsService,
     private location: Location
   ) { }
   

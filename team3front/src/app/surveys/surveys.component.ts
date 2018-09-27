@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Survey } from '../models/survey';
-import { SurveysService } from './surveys.service';
+import { SurveysService } from '../services/surveys.service';
+import { Location } from '@angular/common';
 
 export interface Tutor {
   name: string;
@@ -19,8 +20,8 @@ export interface Option {
 export class SurveysComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute,
-    private applicantsService: ApplicantsService,
+    //private route: ActivatedRoute,
+    //private applicantsService: ApplicantsService,
     private location: Location
   ) { }
 
