@@ -14,7 +14,8 @@ export class Survey {
         public solvedQuestions: string,
         public tone: string,
         public satisfactionLevel: string,
-        public suggestions: string
+        public suggestions: string,
+        
       
         
     ) {}
