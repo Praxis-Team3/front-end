@@ -7,7 +7,9 @@ import { Observable, of } from 'rxjs';
 import { Survey } from '../models/survey';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders(
+    { 'Content-Type': 'application/json' }
+    )
 };
 
 @Injectable({
@@ -15,10 +17,21 @@ const httpOptions = {
 })
 export class SurveysService {
 
-  private surveysUrl = 'api/surveys';
+  private surveysUrl = 'https://front-workshop.herokuapp.com/surveys';
   constructor(private http: HttpClient) { }
 
-  createSurvey(survey: Survey): Observable<any> {
-    return this.http.post(this.surveysUrl, survey, httpOptions);
+  /*POST : Add a new survey to the server*/
+  createSurvey(survey: Survey): Observable<Survey> {
+    var pls = JSON.parse(JSON.stringify(survey));
+    console.log(pls);
+    return this.http.post<Survey>(this.surveysUrl, pls, httpOptions);
+  }
+  
+  /* Get Surveys from the server */
+  getSurveys (): Observable<Survey[]> {
+    return this.http.get<Survey[]>(this.surveysUrl)
+    .pipe(
+      tap(surveys => console.log('fetched surveys'))
+    );
   }
 }
