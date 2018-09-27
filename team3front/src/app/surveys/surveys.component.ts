@@ -19,26 +19,26 @@ export interface Option {
 })
 export class SurveysComponent implements OnInit {
 
+
   constructor(
     //private route: ActivatedRoute,
-    //private applicantsService: ApplicantsService,
-    private location: Location
+    private location: Location,
+    private surveysService: SurveysService,
+    
   ) { }
 
-  sessionDate: Date;
-  survey = new Survey(this.sessionDate,'','','','','','','','','','','','');
-  private surveysService: SurveysService;
+  survey = new Survey('','','','','','','','','','','','','');
+  
+  
   ngOnInit() {
   }
 
-  submmit(xsurvey: Survey): void {
-    xsurvey = this.survey;
-    if (!xsurvey) { return; }
-    this.surveysService.saveSurvey(xsurvey)
-      .subscribe(hero => {
-        console.log('saved survey')
-      });
-  }
+  save(): void {
+    this.survey.sessionDate = this.survey.sessionDate.toString();
+    this.surveysService.createSurvey(this.survey).subscribe();
+    console.log("Service called");
+    }
+  
 
   goBack(): void {
     this.location.back();

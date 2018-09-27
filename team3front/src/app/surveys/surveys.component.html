@@ -153,7 +153,7 @@
               <h2>Suggestions or Comments</h2>
             <mat-form-field class="example-full-width" style="width:300px !important">
               <textarea matInput placeholder="Comments" 
-                        flex [(ngModel)]="survey.suggestions" 
+                        flex [(ngModel)]="survey.suggestion" 
                         name="suggestions" 
                         cdkTextareaAutosize
                         #autosize="cdkTextareaAutosize"
@@ -168,6 +168,6 @@
     
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="submmit()" color="accent">Submit</button>
+    <button mat-raised-button (click)="save()" color="accent">Submit</button>
   </mat-card-actions>
 </mat-card>

@@ -7,7 +7,9 @@ import { Observable, of } from 'rxjs';
 import { Survey } from '../models/survey';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders(
+    { 'Content-Type': 'application/json' }
+    )
 };
 
 @Injectable({
@@ -19,11 +21,9 @@ export class SurveysService {
   constructor(private http: HttpClient) { }
 
   /*POST : Add a new survey to the server*/
-  
-  saveSurvey (survey: Survey): Observable<Survey> {
-    return this.http.post<Survey>(this.surveysUrl, survey, httpOptions).pipe(
-      tap((survey: Survey) => console.log(`Saved survey succesfully`))
-    );
+  createSurvey(survey: Survey): Observable<Survey> {
+    console.log(survey);
+    return this.http.post<Survey>(this.surveysUrl, Survey, httpOptions);
   }
   
   /* Get Surveys from the server */
