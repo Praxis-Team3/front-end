@@ -15,8 +15,16 @@ const httpOptions = {
 })
 export class ApplicantsService {
 
-  private applicantsUrl = 'api/applicants';
+  private applicantsUrl = 'https://front-workshop.herokuapp.com/applicants';
   constructor(private http: HttpClient) { }
+
+
+  /*POST : Add a new applicant to the server*/
+  addApplicant(applicant: Applicant): Observable<Applicant> {
+    var pls = JSON.parse(JSON.stringify(applicant));
+    console.log(pls);
+    return this.http.post<Applicant>(this.applicantsUrl, pls, httpOptions);
+  }
 
   getApplicants(): Observable<Applicant[]> {
     return this.http.get<Applicant[]>(this.applicantsUrl)
@@ -42,17 +50,11 @@ export class ApplicantsService {
   getApplicant(id: number): Observable<Applicant> {
     const url = `${this.applicantsUrl}/${id}`;
     return this.http.get<Applicant>(url).pipe(
-      tap(_ => this.log(`fetched applicant id=${id}`)),
-      catchError(this.handleError<Applicant>(`getHero id=${id}`))
+      tap(_ => this.log(`fetched applicant id=${id}`))
     );
   }
 
-  addApplicant(applicant: Applicant): Observable<Applicant> {
-    return this.http.post<Applicant>(this.applicantsUrl, applicant, httpOptions).pipe(
-        tap((student: Applicant) => this.log(`added applicant w/ id=${applicant.id} w/ name=${applicant.name}`)),
-        catchError(this.handleError<Applicant>('addApplicant'))
-    );
-}
+ 
 
   //////////////////////// Save methods ////////////////////
 

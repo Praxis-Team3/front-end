@@ -128,13 +128,13 @@ export class RegistrationComponent implements OnInit, AfterViewInit {
     this.recordRTC.save('video.webm');
   }
 
-  add(name: string): void {
-    name = name.trim();
-    if (!name) { return; }
-    this.applicantsService.addApplicant({ name } as Applicant)
-      .subscribe(applicant => {
-        this.applicants.push(applicant);
-      });
+  saveApplicant(): void {
+    this.model.video = '';
+    this.model.birthdate=this.model.birthdate.toString();
+    this.model.id =Number(this.model.id);
+    console.log(this.model);
+    this.applicantsService.addApplicant(this.model)
+      .subscribe();
   }
 
   getApplicants(): void {
