@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Applicant } from '../applicant';
+import { ActivatedRoute } from '@angular/router';
+import { Applicant } from '../models/applicant';
 import { ApplicantsService} from '../applicants.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-list-applicants',
@@ -11,15 +12,31 @@ import { ApplicantsService} from '../applicants.service';
 export class ListApplicantsComponent implements OnInit {
 
   applicants: Applicant[];
-  constructor(private applicantService: ApplicantsService) { }
+  constructor(private applicantService: ApplicantsService,
+    private location: Location,
+    private route: ActivatedRoute,) { }
 
   ngOnInit() {
-    this.getPendingApplicants();
+    this.getApplicants();
   }
 
-  getPendingApplicants(): void {
-    this.applicantService.searchPendingApplicants()
+  getApplicants(): void {
+    this.applicantService.getApplicants()
     .subscribe(applicants => this.applicants = applicants);
+  }
+
+  rejectApplicant(_id: string): void {
+    this.applicantService.rejectApplicant(_id)
+    .subscribe(() => this.goBack());
+  }
+
+  acceptApplicant(_id: string): void {
+    this.applicantService.acceptApplicant(_id)
+    .subscribe(() => this.goBack());
+  }
+
+  goBack(): void {
+    this.location.path();
   }
 
 }

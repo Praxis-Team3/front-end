@@ -14,7 +14,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'applicants', component: ListApplicantsComponent},
-  { path: 'detail/:id', component: ApplicantDetailComponent},
   { path: 'sessionsurvey', component: SurveysComponent},
   { path: 'finalsurvey', component: FinalsurveyComponent},
   { path: 'help', component: HelpComponent},

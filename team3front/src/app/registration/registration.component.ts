@@ -1,8 +1,9 @@
 declare var require: any;
+// tslint:disable-next-line:prefer-const
 let RecordRTC = require('recordrtc/RecordRTC.min');
 import { Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
 
-import { Applicant } from '../applicant';
+import { Applicant } from '../models/applicant';
 import { FormBuilder, FormGroup, Validators, FormGroupDirective, NgForm, FormControl } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 
@@ -28,11 +29,11 @@ export class RegistrationComponent implements OnInit, AfterViewInit {
   model = new Applicant();
 
   isLinear = true;
-  firstFormGroup: FormGroup;  
-  applicants : Applicant[] = [];
+  firstFormGroup: FormGroup;
+  applicants: Applicant[] = [];
 
 
-    
+
 
   private stream: MediaStream;
   private recordRTC: any;
@@ -56,14 +57,14 @@ export class RegistrationComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     // set the initial state of the video
-    let video:HTMLVideoElement = this.video.nativeElement;
+    const video: HTMLVideoElement = this.video.nativeElement;
     video.muted = false;
     video.controls = true;
     video.autoplay = false;
   }
 
   toggleControls() {
-    let video: HTMLVideoElement = this.video.nativeElement;
+    const video: HTMLVideoElement = this.video.nativeElement;
     video.muted = !video.muted;
     video.controls = !video.controls;
     video.autoplay = !video.autoplay;
@@ -71,7 +72,8 @@ export class RegistrationComponent implements OnInit, AfterViewInit {
 
   successCallback(stream: MediaStream) {
 
-    var options = {
+    // tslint:disable-next-line:prefer-const
+    let options = {
       mimeType: 'video/webm', // or video/webm\;codecs=h264 or video/webm\;codecs=vp9
       audioBitsPerSecond: 128000,
       videoBitsPerSecond: 128000,
@@ -80,58 +82,59 @@ export class RegistrationComponent implements OnInit, AfterViewInit {
     this.stream = stream;
     this.recordRTC = RecordRTC(stream, options);
     this.recordRTC.startRecording();
-    let video: HTMLVideoElement = this.video.nativeElement;
+    const video: HTMLVideoElement = this.video.nativeElement;
     video.src = window.URL.createObjectURL(stream);
     this.toggleControls();
   }
 
   errorCallback() {
-    //handle error here
+    // handle error here
   }
 
   processVideo(audioVideoWebMURL) {
-    let video: HTMLVideoElement = this.video.nativeElement;
-    let recordRTC = this.recordRTC;
+    const video: HTMLVideoElement = this.video.nativeElement;
+    const recordRTC = this.recordRTC;
     video.src = audioVideoWebMURL;
     this.toggleControls();
-    var recordedBlob = recordRTC.getBlob();
     recordRTC.getDataURL(function (dataURL) { });
   }
 
   startRecording() {
-    
+
     navigator.mediaDevices
       .getUserMedia({
         video: {
-          
+
             width: 1280,
             height: 720
-          
+
         }, audio: true
       })
-      .then(this.successCallback.bind(this), 
+      .then(this.successCallback.bind(this),
       this.errorCallback.bind(this));
 
 
   }
 
   stopRecording() {
-    let recordRTC = this.recordRTC;
+    const recordRTC = this.recordRTC;
     recordRTC.stopRecording(this.processVideo.bind(this));
-    let stream = this.stream;
+    const stream = this.stream;
     stream.getAudioTracks().forEach(track => track.stop());
     stream.getVideoTracks().forEach(track => track.stop());
-    
+
   }
 
   download() {
     this.recordRTC.save('video.webm');
   }
 
-  add(name: string): void {
+  add(name, lastname, id, birthday, email, password): void {
     name = name.trim();
+    lastname = lastname.trim();
+    id = id.trim();
     if (!name) { return; }
-    this.applicantsService.addApplicant({ name } as Applicant)
+    this.applicantsService.addApplicant({ names: name } as Applicant)
       .subscribe(applicant => {
         this.applicants.push(applicant);
       });

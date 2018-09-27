@@ -1,7 +1,22 @@
 <h2>Applicants</h2>
-<mat-nav-list class = "applicantlist" role= "list">
-  <a mat-list-item routerLink = "/detail/{{applicant.id}}"
-    role="listitem" *ngFor = "let applicant of applicants">
-      {{applicant.name}} {{applicant.lastname}}
-  </a>
-</mat-nav-list>
+<mat-list role= "list">
+  <mat-list-item role="listitem" *ngFor = "let applicant of applicants">
+    <mat-card class = "example-card">
+      <mat-card-header>
+        <mat-card-title>{{applicant.names}} {{applicant.lastnames}}</mat-card-title>
+        <mat-card-subtitle>{{applicant.email}}</mat-card-subtitle>
+      </mat-card-header>
+      <video width = "380" height="210" controls>
+        <!--añadirVideo-->
+      </video>
+    <mat-card-content>
+       <button mat-raised-button color="accent" (click)="acceptApplicant(applicant._id)">Accept</button>
+       <button mat-raised-button color="warn" (click)="rejectApplicant(applicant._id)">Reject</button>
+    </mat-card-content>
+    </mat-card>   
+  </mat-list-item>
+</mat-list>
+<div class = "goBack">
+  <br>
+   <button mat-raised-button color = "primary" (click)="goBack()">Go Back</button>
+</div>

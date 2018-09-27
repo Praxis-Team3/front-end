@@ -1,11 +1,10 @@
 export class Applicant {
     id: number;
-    name: string;
-    lastname: string;
+    names: string;
+    lastnames: string;
     birthday: string;
     email: string;
     password: string;
     // need to add video
-    pending: boolean;
     status: string;
 }
