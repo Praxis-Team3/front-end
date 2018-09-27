@@ -58,9 +58,17 @@ export class SurveysComponent implements OnInit {
   }
 
   tutors: Tutor[] = [
-    {name: 'David', subject: 'Introduction'},
-    {name: 'Felipe', subject: 'Secutiry'},
-    {name: 'Leonardo', subject: 'Big Data'}
+    {name: 'David Vazquez Rivera', subject: 'Introduction'},
+    {name: 'Felipe Acosta ', subject: 'Secutiry'},
+    {name: 'Leonardo Talero Niño', subject: 'Big Data'},
+    {name: 'Gustavo Adolfo Arroyave Lopez', subject: 'Agile'},
+    {name: 'Juan Fernando Moreno Marín' , subject: 'UX'},
+    {name: 'Johan Miguel Ruiz Rodriguez', subject: 'Software Architecture'},
+    {name: 'Lia Sanchez Echeverri', subject: 'Requirements'},
+    {name: 'Jesus David Sanchez Escobar', subject: 'Back End'},
+    {name: 'Leonardo Uribe', subject: 'Front End'},
+    {name: 'Raúl Alberto Zuluaga', subject:'Cloud Computing'},
+    {name: 'Ariel Peña Ocando', subject: 'Quality Assurance'}
   ];
 
   options: Option[] = [
