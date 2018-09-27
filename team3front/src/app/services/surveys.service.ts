@@ -22,8 +22,9 @@ export class SurveysService {
 
   /*POST : Add a new survey to the server*/
   createSurvey(survey: Survey): Observable<Survey> {
-    console.log(survey);
-    return this.http.post<Survey>(this.surveysUrl, Survey, httpOptions);
+    var pls = JSON.parse(JSON.stringify(survey));
+    console.log(pls);
+    return this.http.post<Survey>(this.surveysUrl, pls, httpOptions);
   }
   
   /* Get Surveys from the server */

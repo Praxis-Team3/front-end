@@ -2,7 +2,7 @@ export class Survey {
 
     public id: number;
     constructor(
-        public sessionDate: string,
+        public sessionDate: Date,
         public sessionType: string,
         public tutorName: string,
         public sessionContent: string,

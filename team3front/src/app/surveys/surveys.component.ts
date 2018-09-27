@@ -26,15 +26,15 @@ export class SurveysComponent implements OnInit {
     private surveysService: SurveysService,
     
   ) { }
-
-  survey = new Survey('','','','','','','','','','','','','');
+  tempDate : Date;
+  survey = new Survey(this.tempDate,'','','','','','','','','','','','');
   
   
   ngOnInit() {
   }
 
   save(): void {
-    this.survey.sessionDate = this.survey.sessionDate.toString();
+    this.survey.sessionDate.toISOString();
     this.surveysService.createSurvey(this.survey).subscribe();
     console.log("Service called");
     }
