@@ -12,7 +12,7 @@ import { Applicant } from '../applicant';
 })
 export class ApplicantDetailComponent implements OnInit {
 
-  private applicant: Applicant;
+  public applicant: Applicant;
   constructor(
     private route: ActivatedRoute,
     private applicantsService: ApplicantsService,
