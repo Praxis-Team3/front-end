@@ -6,19 +6,25 @@
       <ng-template matStepLabel>User</ng-template>
       <div>
         <mat-form-field>
-          <input matInput placeholder="First Name" formControlName="firstCtrl" [(ngModel)]="model.name" required>
+          <input matInput placeholder="First Name" formControlName="firstCtrl" [(ngModel)]="model.names" required>
         </mat-form-field>
       </div>
 
       <div>
         <mat-form-field>
-          <input matInput placeholder="Last Name" [(ngModel)]="model.lastname" formControlName="secondCtrl" required>
+          <input matInput placeholder="Last Name" [(ngModel)]="model.lastnames" formControlName="secondCtrl" required>
         </mat-form-field>
       </div>
 
       <div>
         <mat-form-field>
-          <input matInput placeholder="BirthDay" type=date [(ngModel)]="model.birthday" formControlName="thirdCtrl" required>
+          <input matInput placeholder="Identification Number" [(ngModel)]="model.id" formControlName="thirdCtrl" required>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="BirthDay" type=date [(ngModel)]="model.birthdate" formControlName="thirdCtrl" required>
         </mat-form-field>
       </div>
 
@@ -109,13 +115,13 @@
     <h3>Personal Information</h3>
     
     <div>
-      <h4>Name: {{model.name}}</h4>      
+      <h4>Name: {{model.names}}</h4>      
     </div>
     <div>
-      <h4>Last Name: {{model.lastname}}</h4>
+      <h4>Last Name: {{model.lastnames}}</h4>
     </div>
     <div>
-      <h4>BirthDay: {{model.birthday}}</h4>
+      <h4>BirthDay: {{model.birthdate}}</h4>
     </div>
     <h3>User Information</h3>
     <div>
@@ -128,7 +134,7 @@
       <button mat-raised-button matStepperPrevious color="primary">
          <mat-icon aria-label="Record">navigate_before</mat-icon>Back
       </button>
-      <button mat-raised-button color="accent" (click)="add(model.name)" [routerLink]="['/success']">
+      <button mat-raised-button color="accent" (click)="saveApplicant()" [routerLink]="['/success']">
          Submit</button>
       
     </div>

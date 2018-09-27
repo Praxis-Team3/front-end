@@ -29,15 +29,15 @@ export class ApplicantDetailComponent implements OnInit {
   }
 
   rejectApplicant(): void {
-    this.applicant.status = 'rejected';
-    this.applicant.pending = false;
+    //this.applicant.status = 'rejected';
+    //this.applicant.pending = false;
     this.applicantsService.updateApplicant(this.applicant)
     .subscribe(() => this.goBack());
   }
 
   acceptApplicant(): void {
-    this.applicant.status = 'accepted';
-    this.applicant.pending = false;
+    //this.applicant.status = 'accepted';
+    //this.applicant.pending = false;
     this.applicantsService.updateApplicant(this.applicant)
     .subscribe(() => this.goBack());
   }
