@@ -46,7 +46,9 @@
   
       
       <div>
-        <button mat-button matStepperNext onclick="validate_password()">Next</button>
+        <button mat-raised-button color="accent" matStepperNext onclick="validate_password()">
+            Next<mat-icon aria-label="Record">navigate_next</mat-icon>
+        </button>
       </div>
     </form>
     
@@ -78,10 +80,10 @@
       <div class="row">
         <div class="col-xs-12">
           <button mat-raised-button color="accent" (click)="startRecording()">
-            <mat-icon aria-label="Record" routerLink="/help">videocam</mat-icon>
+            <mat-icon aria-label="Record" >videocam</mat-icon>
         </button>
           <button mat-raised-button color="warn"(click) ="stopRecording()">
-            <mat-icon aria-label="Record" routerLink="/help">stop</mat-icon>
+            <mat-icon aria-label="Record" >stop</mat-icon>
           </button>
           <button mat-raised-button color="primary" (click)="download()"> Download</button>
         </div>
@@ -89,8 +91,12 @@
       
 
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext onclick="validate_video()">Next</button>
+        <button mat-raised-button color="primary" matStepperPrevious>
+            <mat-icon aria-label="Record">navigate_before</mat-icon>Back
+        </button>
+        <button mat-raised-button color="accent" matStepperNext onclick="validate_video()">
+            Next<mat-icon aria-label="Record">navigate_next</mat-icon>
+        </button>
       </div>
     </form>
     
@@ -119,8 +125,10 @@
     
    
     <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="add(model.name)" [routerLink]="['/success']">
+      <button mat-raised-button matStepperPrevious color="primary">
+         <mat-icon aria-label="Record">navigate_before</mat-icon>Back
+      </button>
+      <button mat-raised-button color="accent" (click)="add(model.name)" [routerLink]="['/success']">
          Submit</button>
       
     </div>

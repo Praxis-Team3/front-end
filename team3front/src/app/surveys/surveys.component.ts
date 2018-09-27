@@ -68,7 +68,9 @@ export class SurveysComponent implements OnInit {
     {name: 'Jesus David Sanchez Escobar', subject: 'Back End'},
     {name: 'Leonardo Uribe', subject: 'Front End'},
     {name: 'Raúl Alberto Zuluaga', subject:'Cloud Computing'},
-    {name: 'Ariel Peña Ocando', subject: 'Quality Assurance'}
+    {name: 'Ariel Peña Ocando', subject: 'Quality Assurance'},
+    {name: 'Alejandro Rosero Vicuña', subject: 'Automated Regression Testing'},
+    {name: 'Sebastian Ruiz Villa', subject: 'DevOps'}
   ];
 
   options: Option[] = [
