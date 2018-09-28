@@ -129,7 +129,7 @@ export class RegistrationComponent implements OnInit, AfterViewInit {
   }
 
   saveApplicant(): void {
-    this.model.video = '';
+    this.model.video = 'videoSignedUrl';
     this.model.birthdate=this.model.birthdate.toString();
     this.model.id =Number(this.model.id);
     console.log(this.model);
