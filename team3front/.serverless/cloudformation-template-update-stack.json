@@ -92,7 +92,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/team3front/production/1538010104697-2018-09-27T01:01:44.697Z/team3front.zip"
+          "S3Key": "serverless/team3front/production/1538070099476-2018-09-27T17:41:39.476Z/team3front.zip"
         },
         "FunctionName": "team3front-production-api",
         "Handler": "lambda.universal",
@@ -111,14 +111,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "ApiLambdaVersionE9l0nrtWXXQRJJk5rIwG9oVORkv6Jk3tTdFwe7wnE": {
+    "ApiLambdaVersion6Gur9AOA7u1vezVdPeGrZ7VrpI2hGiWz6a7AKirPOc": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ApiLambdaFunction"
         },
-        "CodeSha256": "Rdmbuoq5wQk4LMPejER5KHPaa/oAbTRIOJxEfyXo+LA="
+        "CodeSha256": "d90Zhe4KF5jLXoqCsn9XDZzdhKMLRXauj+xWbUOJnpg="
       }
     },
     "ApiGatewayRestApi": {
@@ -228,7 +228,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1538010104730": {
+    "ApiGatewayDeployment1538070099658": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -284,7 +284,7 @@
     "ApiLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ApiLambdaVersionE9l0nrtWXXQRJJk5rIwG9oVORkv6Jk3tTdFwe7wnE"
+        "Ref": "ApiLambdaVersion6Gur9AOA7u1vezVdPeGrZ7VrpI2hGiWz6a7AKirPOc"
       }
     },
     "ServiceEndpoint": {

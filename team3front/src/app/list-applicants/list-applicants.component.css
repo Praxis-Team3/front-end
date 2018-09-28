@@ -1,10 +1,11 @@
-mat-card.example-card {
-  max-width: 400px;
-  max-height: 410px;
-  margin-bottom: -300px;
-  margin-left: 35%;
-  vertical-align: auto;
+.example-card {
+  max-width: 250px;
+  max-height: 250px;
+  margin-bottom: -270px;
+  align-self: auto;
+  margin-left: -200px;
 }
+
 .cardListItem{
   max-width: 400px;
   max-height: 410px;
